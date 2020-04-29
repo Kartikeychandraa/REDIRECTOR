@@ -1,0 +1,99 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title><-REDIRECTOR-></title>
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+<link rel="icon" href="./favicon.ico" type="image/x-icon">
+<style>
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.center { 
+color: white;
+  text-align: center;
+  margin: auto;
+  margin-top: 3%;
+width:auto;
+  border: 3px solid white;
+  padding: 10px;
+}
+.center :hover { 
+background-color: red;
+}
+</style>
+</head>
+
+
+<body oncontextmenu="return false;">
+<script>
+function a(){
+var goto= document.getElementById("1245").value;
+	document.write("COPY THIS URL TO BROWSER:  ");
+	document.write("https://app.gotomeeting.com/?meetingId="+ goto);
+	
+}
+
+function b(){
+var goto= document.getElementById("6789").value;
+	document.write("COPY THIS URL TO BROWSER:  ");
+	document.write("https://app.gotowebinar.com/?meetingId="+ goto);
+}
+function c(){
+var goto= document.getElementById("999").value;
+	
+	var len = goto.length; 
+	var n = goto.lastIndexOf("/");
+	var res = goto.slice(n+1, len);
+	if(res.length <= 9)
+		{alert("Can`t catch meeting id");}
+else
+alert("your meeting id is :- "+ res);
+}
+
+</script>
+<div class="center container">
+<p>
+	<h1>Enter meeting URL</h1>
+<form>
+<input type = "text" placeholder="COPY URL HERE" class="form-control" name="meeting" id="999">
+<br>
+<input type = "submit" value="submit" class="btn btn-info" onclick="c()">
+</form>
+<br>
+<h1>Enter gotomeeting id</h1>
+<form>
+<input type = "text" placeholder="goto meetingId" class="form-control" name="meeting" id="1245" required>
+<br>
+<input type = "submit" value="submit" class="btn btn-info" onclick="a()">
+</form>
+<br>
+<h1>Enter gotoWebinar id</h1>
+<form>
+<input type = "text" placeholder="goto webinarId" class="form-control" name="meeting" id="6789" required>
+<br>
+<input type = "submit" value="submit" class="btn btn-info" onclick="b()">
+</form>
+</p>
+</div>   
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+</body>
+</html>
