@@ -1,69 +1,59 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title><-REDIRECTOR-></title>
-<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-<link rel="icon" href="./favicon.ico" type="image/x-icon">
-<style>
-body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-.center { 
-color: white;
-  text-align: center;
-  margin: auto;
-  margin-top: 3%;
-width:auto;
-  border: 3px solid white;
-  padding: 10px;
-}
-.center :hover { 
-background-color: red;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Redirector</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .center { 
+            color: white;
+            text-align: center;
+            margin: auto;
+            margin-top: 3%;
+            width: auto;
+            border: 3px solid white;
+            padding: 10px;
+        }
+        .center:hover { 
+            background-color: red;
+        }
+    </style>
 </head>
 
-
 <body oncontextmenu="return false;">
+
 <script>
+    function b(event) {
+        event.preventDefault(); // Prevents form submission and page refresh
+        var value = document.getElementById("999").value.trim();
 
-function b(){
-var value= document.getElementById("999").value;
-	location.replace("wa.me/"+ value);
-}
-
+        if (value.length === 10 && !isNaN(value)) {
+            window.location.href = "https://wa.me/" + value; // WhatsApp Redirect
+        } else {
+            alert("Please enter a valid 10-digit number.");
+        }
+    }
 </script>
+
 <div class="center container">
-<p>
-	<h1>Enter meeting URL</h1>
-<form>
-<input type = "Number" placeholder="Enter 10 digit number" class="form-control" name="whatsapp" id="999">
-<br>
-<input type = "submit" value="submit" class="btn btn-info" onclick="b()">
-</form>
-<br>
-</form>
-</p>
-</div>   
+    <h1>Enter WhatsApp Number</h1>
+    <form onsubmit="b(event)">
+        <input type="tel" placeholder="Enter 10-digit number" class="form-control" id="999" required pattern="[0-9]{10}">
+        <br>
+        <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+</div>
 
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
 </body>
 </html>
