@@ -41,28 +41,10 @@ background-color: red;
 
 <body oncontextmenu="return false;">
 <script>
-function a(){
-var goto= document.getElementById("1245").value;
-	document.write("COPY THIS URL TO BROWSER:  ");
-	document.write("https://app.gotomeeting.com/?meetingId="+ goto);
-	
-}
 
 function b(){
-var goto= document.getElementById("6789").value;
-	document.write("COPY THIS URL TO BROWSER:  ");
-	document.write("https://app.gotowebinar.com/?meetingId="+ goto);
-}
-function c(){
-var goto= document.getElementById("999").value;
-	
-	var len = goto.length; 
-	var n = goto.lastIndexOf("/");
-	var res = goto.slice(n+1, len);
-	if(res.length <= 9)
-		{alert("Can`t catch meeting id");}
-else
-alert("your meeting id is :- "+ res);
+var value= document.getElementById("999").value;
+	location.replace("wa.me/"+ value);
 }
 
 </script>
@@ -70,23 +52,11 @@ alert("your meeting id is :- "+ res);
 <p>
 	<h1>Enter meeting URL</h1>
 <form>
-<input type = "text" placeholder="COPY URL HERE" class="form-control" name="meeting" id="999">
-<br>
-<input type = "submit" value="submit" class="btn btn-info" onclick="c()">
-</form>
-<br>
-<h1>Enter gotomeeting id</h1>
-<form>
-<input type = "text" placeholder="goto meetingId" class="form-control" name="meeting" id="1245" required>
-<br>
-<input type = "submit" value="submit" class="btn btn-info" onclick="a()">
-</form>
-<br>
-<h1>Enter gotoWebinar id</h1>
-<form>
-<input type = "text" placeholder="goto webinarId" class="form-control" name="meeting" id="6789" required>
+<input type = "Number" placeholder="Enter 10 digit number" class="form-control" name="whatsapp" id="999">
 <br>
 <input type = "submit" value="submit" class="btn btn-info" onclick="b()">
+</form>
+<br>
 </form>
 </p>
 </div>   
